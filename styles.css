@@ -95,7 +95,7 @@ background: linear-gradient(to bottom, #261b24, #342c34, #1a1519
 }
 
 .descriptions {
-    font-family: 'Arial', cursive;
+     font-family: "Kedebideri", sans-serif;
     font-size: 30px;
     color: #B49AC1;
     padding: 10px;
@@ -171,7 +171,7 @@ justify-content: center;
 .description2s {
     display: flex;
     align-items: top;
-    font-family: 'Arial', cursive;
+    font-family: "Kedebideri", sans-serif;
     font-size: 30px;
     color: #B49AC1;
     padding: 10px;
@@ -212,7 +212,7 @@ justify-content: center;
 }
 
 .contact-nav a{
-    font-family: 'Arial', cursive;
+    font-family: "Kedebideri", sans-serif;
     text-decoration-line: underline;
     color: #B49AC1;
     padding-bottom: 30px;
@@ -266,7 +266,7 @@ display: flex;
 .desc2 {
   padding: 30px;
   font-size: 30px;
-  font-family:'Areial', cursive;
+  font-family:'Arial', cursive;
   color: #B49AC1;
 }
 
@@ -315,7 +315,7 @@ display: flex;
 .desc4 {
   padding: 30px;
   font-size: 30px;
-  font-family:'Areial', cursive;
+  font-family:'Arial', cursive;
   color: #B49AC1;
 }
 
@@ -328,4 +328,68 @@ display: flex;
   .image1, .image2 {
     width: 100%;        
   }
+}
+
+/* page 3 comtact */
+
+.content{
+font-family: "Cormorant", serif;
+padding-left: 30px; 
+padding-bottom: 20px;
+color: #B49AC1;
+font-size: 20px;
+border-top:double 10px #B49AC1;
+background-color: #261b24
+  
+}
+.email{
+  color: #ffffff;
+}
+
+.contact-phone{
+  color: #ffffff;
+}
+
+#contact{
+  display: flex;
+  
+  flex-direction: column;
+  max-width: 350px;
+  
+}
+
+#contact input,textarea{
+  display: block;
+padding: 5px;
+margin-bottom: 15px;
+margin-top: 5px;
+border-radius: 5px;
+}
+
+.row{
+  gap:30px;
+  padding-top: 10px;
+}
+
+button[type="submit"] {
+  border-radius: 5px;
+  background-color: #B49AC1;
+  color: #1a1519;
+  min-width: 15ch;
+}
+button[type="submit"]:hover {
+  background-color: #E5D4E0;
+  color: #1a1519;
+}
+
+button[type="reset"] {
+  border-radius: 5px;
+  background-color: #46121c;
+  color: #f2ecf1;
+  min-width: 15ch;
+}
+
+button[type="reset"]:hover {
+  background-color: #E5D4E0;
+  color: #1a1519;
 }
