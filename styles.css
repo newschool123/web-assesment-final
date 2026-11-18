@@ -144,7 +144,6 @@ justify-content: center;
 .container2 {
   display: flex;
   justify-content: center;
-  align-items: top; 
   max-width: 3000px;
 }
 
@@ -170,7 +169,6 @@ justify-content: center;
 
 .description2s {
     display: flex;
-    align-items: top;
     font-family: "Kedebideri", sans-serif;
     font-size: 30px;
     color: #B49AC1;
