@@ -391,3 +391,31 @@ button[type="reset"]:hover {
   background-color: #E5D4E0;
   color: #1a1519;
 }
+
+/*about us page*/
+
+.container5 {
+  display: flex;
+  font-family: 'Cormorant', cursive;
+  font-size: 20px;
+  color: #B49AC1;
+}
+.header-group h1 {
+  display: flex;
+  justify-content: start;
+  padding-left: 50px;
+  font-family: 'Carattere', cursive;
+  font-size: 50px;
+  color: #B49AC1;
+  border-top: 10px double #B49AC1;
+  padding-top: 20px;
+
+}
+.header-group p {
+  display: flex;
+  justify-content: start;
+  padding-left: 50px;
+  font-family: 'Cormorant', cursive;
+  font-size: 20px;
+  color: #B49AC1;
+}
