@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -20,8 +23,77 @@
     </header>
     <nav class="main-nav">
         <a href="ilustrations.html">ilustrations</a>
-        <a href="contact.html">Map</a>
+        <a href="map.html">Map</a>
         <a href="index.html">Home</a>
     </nav>
+
+
+    <div class="chat-header">General Chat</div>
+<div class="layout-container">
+<img src="throry art.jpg" alt="Chat room illustration" class="side-image">
+  <div class="chat-messages" id="chatBox">
+    <div class="message received"><strong>Alex:</strong> Where can i read the lore </div>
+    <div class="message received"><strong>Sam:</strong> Yo how do i get that skin. </div>
+  </div>
+</div>
+
+ <form class="chat-input" id="chatForm">
+    <input type="text" id="messageInput" cols="5" rows="5" placeholder="Talk Boy." required autocomplete="off">
+    <button type="submit">Send</button>
+  </form>
+
+
+<script>
+  const chatBox = document.getElementById('chatBox');
+  const chatForm = document.getElementById('chatForm');
+  const messageInput = document.getElementById('messageInput');
+
+  const botReplies = [
+    "<strong>Alex:</strong> That's a great point!",
+    "<strong>Sam:</strong> Totally agree with you.",
+    "<strong>Jordan:</strong> Wait, really? Tell me more.",
+    "<strong>Alex:</strong> Haha, classic!"
+  ];
+
+  function addMessage(htmlContent, type) {
+    const msgDiv = document.createElement('div');
+    msgDiv.classList.add('message', type);
+    msgDiv.innerHTML = htmlContent;
+    chatBox.appendChild(msgDiv);
+    chatBox.scrollTop = chatBox.scrollHeight; 
+  }
+
+  chatForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const text = messageInput.value.trim();
+    if (!text) return;
+
+    // 1. Add your message
+    addMessage(text, 'sent');
+    messageInput.value='';
+
+    
+    setTimeout(() => {
+      const randomReply = botReplies[Math.floor(Math.random() *botReplies.length)];
+      addMessage(randomReply,'received');
+    }, 1000);
+  });
+</script>
+    
+
+    <footer class="main-footer">
+        <nav class="social-links">
+            <a href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-square-instagram"></i>
+            </a>
+            <a href="https://www.twitter.com" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="https://www.tiktok.com" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+        </nav>
+        <p class="copyright">&copy; 2077 The Black Rabbit.</p>
+    </footer>
 </body>
 </html>
