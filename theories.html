@@ -29,57 +29,54 @@
 
 
     <div class="chat-header">General Chat</div>
-<div class="layout-container">
-<img src="throry art.jpg" alt="Chat room illustration" class="side-image">
-  <div class="chat-messages" id="chatBox">
-    <div class="message received"><strong>Alex:</strong> Where can i read the lore </div>
-    <div class="message received"><strong>Sam:</strong> Yo how do i get that skin. </div>
-  </div>
-</div>
+    <div class="layout-container">
+        <img src="throry art.jpg" alt="Chat room illustration" class="side-image">
+        <div class="chat-messages" id="chatBox">
+            <div class="message received"><strong>Alex:</strong> Where can i read the lore </div>
+            <div class="message received"><strong>Sam:</strong> Yo how do i get that skin. </div>
+        </div>
+    </div>
 
- <form class="chat-input" id="chatForm">
-    <input type="text" id="messageInput" cols="5" rows="5" placeholder="Talk Boy." required autocomplete="off">
-    <button type="submit">Send</button>
-  </form>
+    <form class="chat-input" id="chatForm">
+        <input type="text" id="messageInput" cols="5" rows="5" placeholder="Talk Boy." required autocomplete="off">
+        <button type="submit">Send</button>
+    </form>
+
+    <script>
+        const chatBox = document.getElementById('chatBox');
+        const chatForm = document.getElementById('chatForm');
+        const messageInput = document.getElementById('messageInput');
+
+        const botReplies = [
+            "<strong>Alex:</strong> That's a great point!",
+            "<strong>Sam:</strong> Totally agree with you.",
+            "<strong>Jordan:</strong> Wait, really? Tell me more.",
+            "<strong>Alex:</strong> Haha, classic!"
+        ];
+
+        function addMessage(htmlContent, type) {
+            const msgDiv = document.createElement('div');
+            msgDiv.classList.add('message', type);
+            msgDiv.innerHTML = htmlContent;
+            chatBox.appendChild(msgDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        chatForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const text = messageInput.value.trim();
+            if (!text) return;
+
+            addMessage(text, 'sent');
+            messageInput.value = '';
 
 
-<script>
-  const chatBox = document.getElementById('chatBox');
-  const chatForm = document.getElementById('chatForm');
-  const messageInput = document.getElementById('messageInput');
-
-  const botReplies = [
-    "<strong>Alex:</strong> That's a great point!",
-    "<strong>Sam:</strong> Totally agree with you.",
-    "<strong>Jordan:</strong> Wait, really? Tell me more.",
-    "<strong>Alex:</strong> Haha, classic!"
-  ];
-
-  function addMessage(htmlContent, type) {
-    const msgDiv = document.createElement('div');
-    msgDiv.classList.add('message', type);
-    msgDiv.innerHTML = htmlContent;
-    chatBox.appendChild(msgDiv);
-    chatBox.scrollTop = chatBox.scrollHeight; 
-  }
-
-  chatForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const text = messageInput.value.trim();
-    if (!text) return;
-
-    // 1. Add your message
-    addMessage(text, 'sent');
-    messageInput.value='';
-
-    
-    setTimeout(() => {
-      const randomReply = botReplies[Math.floor(Math.random() *botReplies.length)];
-      addMessage(randomReply,'received');
-    }, 1000);
-  });
-</script>
-    
+            setTimeout(() => {
+                const randomReply = botReplies[Math.floor(Math.random() * botReplies.length)];
+                addMessage(randomReply, 'received');
+            }, 1000);
+        });
+    </script>
 
     <footer class="main-footer">
         <nav class="social-links">
@@ -96,4 +93,5 @@
         <p class="copyright">&copy; 2077 The Black Rabbit.</p>
     </footer>
 </body>
+
 </html>
