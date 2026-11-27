@@ -8,7 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="styles.css">
+  
+</head>
+
+
+
+
 
 <body>
     <header class="main-header">
@@ -18,15 +27,51 @@
         <h1 class="main-title">The Black Rabbit</h1>
     </header>
     <nav class="main-nav">
-        <a href="ilustrations.html">Ilustrations</a>
         <a href="index.html">Home</a>
+        <a href="ilustrations.html">Illustrations</a>
+        <a href="map.html">Map</a>
         <a href="theories.html">Theories</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
     </nav>
 
 
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <style>
+    #map { height: 500px; width: 100%; background: #222; }
+  </style>
+
+<div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map', {
+      crs: L.CRS.Simple,
+      minZoom: -1
+    });
+    const bounds = [[0, 0], [1000, 1000]]; 
+    L.imageOverlay('daddy.png', bounds).addTo(map);
+    map.fitBounds(bounds);
+    const marker = L.marker([500, 500]).addTo(map);
+    marker.bindPopup("<b>Center Point</b><br>Click info goes here.");
+  </script>
 
 
-    
+
+    <footer class="main-footer">
+        <nav class="social-links">
+            <a href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-square-instagram"></i>
+            </a>
+            <a href="https://www.twitter.com" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="https://www.tiktok.com" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+        </nav>
+        <p class="copyright">&copy; 2077 The Black Rabbit.</p>
+    </footer>
 </body>
 
 </html>
