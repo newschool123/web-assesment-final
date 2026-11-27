@@ -37,15 +37,24 @@
 
 <div id="map" class="map-container">
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-  <script>
-    const map = L.map('map', {
-      crs: L.CRS.Simple,
-      minZoom: -1
-    });
-    const bounds = [[0, 0], [1000, 1000]]; 
-    L.imageOverlay('daddy.png', bounds).addTo(map);
-    map.fitBounds(bounds);
-  </script>
+  
+</div>
+
+<h1 class="locations">Locations</h1>
+
+<div class="carousel">
+  <button class="carousel-btn prev" aria-label="Previous slide">&#10094;</button>
+  
+  <div class="carousel-track">
+    <div class="carousel-slide">the tracks</div>
+    <div class="carousel-slide">the forest</div>
+    <div class="carousel-slide">the cave</div>
+  </div>
+  
+  <button class="carousel-btn next" aria-label="Next slide">&#10095;</button>
+</div>
+<script src="script.js"></script>
+
 
 </div>
 
