@@ -482,3 +482,12 @@ button[type="reset"]:hover {
 
 
 /* page 6 map */
+.map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #120810;
+  border-top: 10px double #B49AC1;
+  border-bottom: 10px double #B49AC1;
+}
